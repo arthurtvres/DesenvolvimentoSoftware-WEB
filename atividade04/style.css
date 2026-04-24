@@ -8,7 +8,7 @@
 .card {
     flex: 1 1 250px;
     padding: 20px;
-    background: #ff8800;
+    background: #cacaca;
     border-radius: 5px;
     text-align: center;
 }
@@ -37,3 +37,89 @@
 }
 
 /*Exercicio 3*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "menu content"
+        "footer footer";
+}
+
+aside {
+    grid-area: menu;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+
+    
+}
+aside h2 {
+    margin-bottom: 15px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    grid-area: content;
+    padding: 20px;
+
+}
+
+footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "menu"
+            "content"
+            "footer";
+    }
+}
+
+/* Exercicio 4 */
+.galeria {
+    display: grid;
+    background: #454545;
+    padding: 40px;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.galeria img{
+    border: solid 2px #ffffff;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
